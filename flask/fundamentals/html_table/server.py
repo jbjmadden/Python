@@ -3,7 +3,6 @@ app = Flask(__name__)
 
 @app.route('/')
 def users_table():
-
     users = [
         {'first_name': 'Michael', 'last_name': 'Choi'},
         {'first_name': 'John', 'last_name': 'Supsupin'},
