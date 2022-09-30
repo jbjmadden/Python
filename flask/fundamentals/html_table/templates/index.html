@@ -27,15 +27,15 @@
                 <th>Last Name</th>
                 <th>Full Name</th>
             </thead>
-        <tbody>
-            {% for users in users %}
-            <tr> 
-                <td>{{users['first_name']}}</td>
-                <td>{{users['last_name']}}</td>
-                <td>{{users['first_name']}} {{users['last_name']}}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
+            <tbody>
+                {% for users in users %}
+                <tr> 
+                    <td>{{users['first_name']}}</td>
+                    <td>{{users['last_name']}}</td>
+                    <td>{{users['first_name']}} {{users['last_name']}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
         </table>
     </div>
 </body>
