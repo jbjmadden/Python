@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Counter</title>
+</head>
+<body>
+    <h1>Counter</h1>
+    <br>
+    <h2>Count = {{session['count']}} times</h2> 
+    <h2>Visits = {{session['visits']}} times</h2>
+    <div class="addButtons">
+        <form action="/test" method="post">
+            <button class="add" data-inline="true">Add to Count</button>
+        </form>
+        <form action="/test2" method="post">
+            <button class="add" data-inline="true">Add 2 to Count</button>
+        </form>
+    </div>
+    <form action="/testInput" method="post">
+        <label for="count_increase">Add X to Count</label>
+        <input type="number" id="count_increase" name="count_increase">
+        <button class="add">Add X to Count</button>
+    </form>
+    <div class="resetButtons">
+        <form action="/reset" method="post">
+            <button class="reset">Reset Count</button>
+        </form>
+        <form action="/destroy_session">
+            <button class="destroy_session">Hard Reset</button>
+        </form>
+    </div>
+</body>
+</html>
