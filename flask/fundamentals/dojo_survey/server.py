@@ -10,12 +10,12 @@ def index():
 def results():
     return render_template('results.html')
 
-@app.route('/home', methods=['POST'])
+@app.route('/home', methods=['post'])
 def home():
     session.clear()
     return redirect('/')
 
-@app.route('/submit', methods=['POST'])
+@app.route('/submit', methods=['post'])
 def submit():
     session['name'] = request.form['name']
     session['location'] = request.form['location']
