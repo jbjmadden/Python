@@ -10,11 +10,6 @@ def index():
 def results():
     return render_template('results.html')
 
-@app.route('/home', methods=['post'])
-def home():
-    session.clear()
-    return redirect('/')
-
 @app.route('/submit', methods=['post'])
 def submit():
     session['name'] = request.form['name']
@@ -22,7 +17,6 @@ def submit():
     session['language'] = request.form['language']
     session['comments'] = request.form['comments']
     return redirect('/results')
-
 
 if __name__=="__main__":
     app.run(debug=True) 

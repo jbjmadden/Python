@@ -36,6 +36,7 @@ select{
 }
 textarea{
     width: 150%;
+    margin-bottom: 10px;
 }
 button {
     width: 100px;
