@@ -26,29 +26,25 @@ CREATE TABLE IF NOT EXISTS `friendships_schema`.`users` (
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
-SELECT * FROM users;
-INSERT INTO users (first_name, last_name) 
-VALUES ('Amy', 'Giver'), ('Eli', 'Byers'), ('Marky', 'Mark'), ('Kermit', 'the Frog'), ('Big', 'Bird'), ('Cookie', 'Monster');
-
 
 -- -----------------------------------------------------
 -- Table `friendships_schema`.`friendships`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `friendships_schema`.`friendships` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `user_id` INT NOT NULL,
   `friend_id` INT NOT NULL,
   `created_at` DATETIME NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` DATETIME NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`user_id`, `friend_id`),
-  INDEX `fk_users_has_users_users1_idx` (`friend_id` ASC) VISIBLE,
-  INDEX `fk_users_has_users_users_idx` (`user_id` ASC) VISIBLE,
-  CONSTRAINT `fk_users_has_users_users`
+  PRIMARY KEY (`id`),
+  INDEX `fk_friendships_users_idx` (`user_id` ASC) VISIBLE,
+  INDEX `fk_friendships_users1_idx` (`friend_id` ASC) VISIBLE,
+  CONSTRAINT `fk_friendships_users`
     FOREIGN KEY (`user_id`)
     REFERENCES `friendships_schema`.`users` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_users_has_users_users1`
+  CONSTRAINT `fk_friendships_users1`
     FOREIGN KEY (`friend_id`)
     REFERENCES `friendships_schema`.`users` (`id`)
     ON DELETE NO ACTION
