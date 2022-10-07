@@ -26,10 +26,10 @@ CREATE TABLE IF NOT EXISTS `dojos_and_ninjas_schema`.`dojos` (
 ENGINE = InnoDB;
 
 SELECT * FROM dojos;
-INSERT INTO dojos (id, name) VALUES (1, 'Chicago'), (2, 'Bellvue'), (3, 'Online');
+INSERT INTO dojos ( name) VALUES ('Chicago'), ('Bellvue'), ('Online');
 SET SQL_SAFE_UPDATES = 1;
 DELETE FROM dojos;
-INSERT INTO dojos (id, name) VALUES (1, 'Chicago'), (2, 'Bellvue'), (3, 'Online');
+INSERT INTO dojos (id, name) VALUES ('Chicago'), ('Bellvue'), ('Online');
 
 -- -----------------------------------------------------
 -- Table `dojos_and_ninjas_schema`.`ninjas`
@@ -52,12 +52,12 @@ CREATE TABLE IF NOT EXISTS `dojos_and_ninjas_schema`.`ninjas` (
 ENGINE = InnoDB;
 
 SELECT * FROM ninjas;
+INSERT INTO ninjas (first_name, last_name, age, dojo_id)
+VALUES ('Jason', 'Madden', 28, 1), ('Ari', 'Winters', 22, 1), ('Kevin', 'Stevens', 23, 1);
+INSERT INTO ninjas (first_name, last_name, age, dojo_id)
+VALUES ('Olivia', 'Banks', 24, 2), ('Donna', 'McCoy', 26, 2), ('Carlos', 'Reyes', 25, 2);
 INSERT INTO ninjas (id, first_name, last_name, age, dojo_id)
-VALUES (1, 'Jason', 'Madden', 28, 1), (2, 'Ari', 'Winters', 22, 1), (3, 'Kevin', 'Stevens', 23, 1);
-INSERT INTO ninjas (id, first_name, last_name, age, dojo_id)
-VALUES (4, 'Olivia', 'Banks', 24, 2), (5, 'Donna', 'McCoy', 26, 2), (6, 'Carlos', 'Reyes', 25, 2);
-INSERT INTO ninjas (id, first_name, last_name, age, dojo_id)
-VALUES (7, 'Austin', 'Betty', 27, 3), (8, 'Jenny', 'Tory', 29, 3), (9, 'Trisha', 'Bush', 20, 3);
+VALUES ('Austin', 'Betty', 27, 3), ('Jenny', 'Tory', 29, 3), ('Trisha', 'Bush', 20, 3);
 
 SELECT * FROM ninjas WHERE dojo_id = 1;
 SELECT * FROM ninjas WHERE dojo_id = 3;

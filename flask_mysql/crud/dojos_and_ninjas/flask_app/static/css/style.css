@@ -1,0 +1,67 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+/*backgrounds and containers*/
+.container{
+    margin-top: 5%;
+
+}
+.col-5{
+    background-color: rgb(52,57,62);
+}
+/*headers*/
+h1{
+    color: rgb(5,122,254);
+}
+label{
+    color: white;
+    font-weight: bold;
+}
+/*general inputs*/
+input{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+/*show page*/
+table{
+    background-color: skyblue;
+}
+th{
+    font-weight: bold;
+}
+
+/*ninja page*/
+.ninja{
+    background-color: rgb(52,57,62);
+}
+select{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 10px;
+}
+/* dojo page*/
+a{
+    font-weight: bold;
+}
+.test a{
+    font-size:larger;
+    color: goldenrod;
+    
+}
+.test a:link { 
+    text-decoration: none; 
+}
+.test a:visited { 
+    text-decoration: none; 
+}
+.test a:hover { 
+    text-decoration: none; 
+}
+.test a:active { 
+    text-decoration: none; 
+}
